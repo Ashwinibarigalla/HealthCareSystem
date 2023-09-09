@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 class="title">Diabetes Prediction</h1>
+    <form method="POST" action="/diabetes">
+        <label for="Pregnancies">Pregnancies:</label>
+        <input type="number" name="Pregnancies" id="Pregnancies" required value="2"><br>
+
+        <label for="Glucose">Glucose:</label>
+        <input type="number" name="Glucose" id="Glucose" required value="120"><br>
+
+        <label for="BloodPressure">Blood Pressure:</label>
+        <input type="number" name="BloodPressure" id="BloodPressure" required value="70"><br>
+
+        <label for="SkinThickness">Skin Thickness:</label>
+        <input type="number" name="SkinThickness" id="SkinThickness" required value="23"><br>
+
+        <label for="Insulin">Insulin:</label>
+        <input type="number" name="Insulin" id="Insulin" required value="80"><br>
+
+        <label for="BMI">BMI:</label>
+        <input type="number" name="BMI" id="BMI" required value="25.5"><br>
+
+        <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+        <input type="number" name="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" required value="0.45"><br>
+
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" id="Age" required value="30"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>Prediction Result:</h2>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
